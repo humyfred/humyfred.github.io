@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <title>Color picker for jQuery</title>
+
+</head>
+<style>
+  *{padding: 0;margin: 0;box-sizing: border-box;}
+  html,body{height: 100%;}
+  body{background: #ececec;}
+  a{ text-decoration: none;color:#000;}
+  a:hover,a:active{ color:#03a9f4;}
+  .icon-logo{display: inline-block;width: 114px;height: 15px;}
+  .icon-liner{position:absolute;display: inline-block;width: 80%;height: 2px;background: #eb4c25;margin-top: 5px;margin-left: 11px;}
+  .icon-logo img{width: 114px;height: 15px;}
+  img { border:0;}
+
+  .clearfix:after{ display: table;content:' ';clear: both;}
+  .border-bottom { padding-bottom: 10px;border-bottom: 1px solid #a0a0a0; }
+  .article-wrap{ position: relative;max-width:700px;margin:0 auto;margin-top:20px;padding: 0 15px;background: white; }
+  .article-wrap .article-hd{ line-height: 1;background: #fff;padding-top: 10px; }
+  .article-wrap .article-bd{ background: #fff;}
+  .article-wrap .article-ft{ margin: 0 -15px;padding:40px 0 24px;text-align:center;background: #ececec;}
+
+  .weekly-wrap {position: relative;}
+  .weekly-wrap .weekly-hd { text-align: center;margin-bottom: 20px;}
+  .weekly-wrap .weekly-hd .weekly-hd-publication {position: absolute;top: 30px;right: 115px;font-weight: bold;color:#fff;font-size: 14px;font-family: "微软雅黑";padding: 2px 8px;border-radius: 3px;background: #eb4c25;}
+  .weekly-wrap .weekly-hd span{ display: inline-block;padding: 24px 0 28px;text-align: center;line-height: 1;font-size: 36px;font-weight: bold;font-family: "微软雅黑";}
+  .weekly-wrap .weekly-hd img{ width: 100%;}
+  .weekly-wrap .weekly-ft { padding-top: 20px;padding-bottom: 50px;}
+
+
+  .link-hd,.section-hd { margin-bottom: 16px;color:#eb4c25;font-size:16px;font-family: "微软雅黑";}
+  .section { margin-bottom: 25px;}
+  .section .section-title { margin-bottom: 9px;font-size:16px;font-weight:bold;font-family: "微软雅黑";}
+  .section .section-title a { display: inline-block;max-width: 365px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+  .section .section-left { float: left;width: 52%;}
+  .section .section-content { color:#676767;font-size:14px;font-family: "微软雅黑";}
+  .section .section-btn{ display:inline-block;width:90px;height:30px;margin-top: 7px;background: url('detail_btn.png');}
+  .section .section-right { float: right;}
+  .section .section-right img { width: 250px; height:110px;}
+  @media screen and (max-width:699px){
+    .section .section-left {width: 100%;}
+    .section .section-right { display: none;}
+  }
+
+  .link-hd {}
+  .link-list { margin-left: 18px;}
+  .link-list li { color:#eb4c25;}
+  .link-list li a { text-decoration: underline; font-size: 14px;line-height: 29px;font-family: "微软雅黑";}
+  .btn-more {display:inline-block;margin-top: 8px;width:90px;height: 30px;}
+  .btn-more img {width:90px;height: 30px;}
+  .btn-register {display:inline-block;margin-top: 7px;width:90px;height:30px;}
+  .btn-register img {width:90px;height: 30px;}
+  .btn-register-red {display:inline-block;width:100px;height:30px;}
+  .btn-register-red img {width:100px;height: 30px;}
+
+  .dialog { margin:0 0 20px 0;text-align: center; font-size: 14px; color:#eb4c25;font-family: "微软雅黑";}
+  .dialog span { margin-top: 10px;display: block;}
+
+
+  .code { width: 130px;height: 130px;margin-bottom: 20px;}
+  .code-name{ margin-bottom: 24px;font-family: '微软雅黑';font-size:16px;}
+
+  .ft-content{font-size: 12px;color:#949494;}
+  .ft-content span {display: block;line-height: 17px;}
+  .ft-content a{color:#6781e6;}
+</style>
+<body>
+  <div class="article-wrap">
+
+      <div class="article-hd">
+        <i class='icon-logo'><img src="logo.png" alt=""></i>
+        <i class='icon-liner'></i>
+      </div>
+      <!-- 期刊内容 start-->
+      <div class="article-bd">
+        <div class="weekly-wrap">
+          <!-- 期刊标题 start-->
+          <div class="weekly-hd">
+            <span>汽车4S店营销周刊</span>
+            <a href="javascript:;" target="_blank"><img src="weekly-banner.png" alt="" /></a>
+            <div class="weekly-hd-publication">
+              第1期
+            </div>
+          </div>
+        <!-- 期刊标题 end-->
+
+          <div class="weekly-bd border-bottom">
+
+            <div class="section-hd">
+              本周内容
+            </div>
+
+            <!-- 文章 start-->
+            <div class="section clearfix">
+              <div class="section-left">
+                <div class="section-title">
+                  <a href="javascript:;" target="_blank" title="">学会这十招，4S店公众号粉丝快速破万</a>
+                </div>
+                <div class="section-content">
+                  各家店都在运营自己的微信公众号，有的店近10万粉丝，
+有的店粉丝不足1000。客户都没有发的软文再好都效果有
+限，如何快速突破10万粉丝？
+                </div>
+
+                <a href="javascript:;" target="_blank" class='section-btn'><img src="detail_btn.png" alt=""></a>
+              </div>
+              <div class="section-right">
+                <a href="javascript:;" target="_blank" title=""><img src="article1.png" alt="" /></a>
+              </div>
+            </div>
+            <!-- 文章 end-->
+
+            <!-- 文章 start-->
+            <div class="section clearfix">
+              <div class="section-left">
+                <div class="section-title">
+                  <a href="javascript:;" target="_blank" title="">精彩案例：海南安骅4S店新车上市全新玩法！</a>
+                </div>
+                <div class="section-content">
+                  这年头，4S店能将新车上市玩出新意玩出花样确实很难。
+但是就是有人玩到了，海南安骅4S店却将新车上市与众筹
+结合，效果出奇的好，想知道它是怎么玩到的吗？
+                </div>
+
+                <a href="javascript:;" target="_blank" class='section-btn'><img src="detail_btn.png" alt=""></a>
+              </div>
+              <div class="section-right">
+                <a href="javascript:;" target="_blank" title=""><img src="article2.png" alt="" /></a>
+              </div>
+            </div>
+            <!-- 文章 end-->
+
+            <!-- 文章 start-->
+            <div class="section clearfix">
+              <div class="section-left">
+                <div class="section-title">
+                  <a href="javascript:;" target="_blank" title="">盘活老客户？看这一篇就够了</a>
+                </div>
+                <div class="section-content">
+                  客户开拓的成本，比起新客户而言花费的成本会更少，仅
+仅只有七分之一。小鲜肉固然要要，但是老客户这块肥肉
+怎么能放手。
+                </div>
+
+                <a href="javascript:;" target="_blank" class='section-btn'><img src="detail_btn.png" alt=""></a>
+              </div>
+              <div class="section-right">
+                <a href="javascript:;" target="_blank" title=""><img src="article3.png" alt="" /></a>
+              </div>
+            </div>
+            <!-- 文章 end-->
+          </div>
+
+          <div class='weekly-ft'>
+            <div class='dialog'>
+                <a href="javascript:;" target="_blank" class="btn-register-red" title=""><img src="register_red.png" alt="" /></a>
+                <span>（9月1-15日注册可赠送“吃月饼”小游戏工具+活动方案）</span>
+            </div>
+
+            <div class="section-hd">
+              培训专区 <span style='color:#a0a0a0'>（教育改变人生）</span>
+            </div>
+            <!-- 文章 start-->
+             <div class="section clearfix">
+              <div class="section-left">
+                <div class="section-title">
+                  <a href="javascript:;" target="_blank" title="">本期开课<br>
+“磨刀不误砍柴工”营销工具用的好，销售业绩不用愁</a>
+                </div>
+                <div class="section-content">
+                 营销工具怎么用才能让用户留在4S店，并形成长期粘性？
+销售、售后如何磨好“砍柴刀”才能收回更多业绩？市场
+部如何发大招让用户倍感兴趣想要来店？......既然都想知道，
+那你还不来听课？
+                </div>
+
+                <a href="javascript:;" target="_blank" class='btn-register'><img src="register.png" alt=""></a>
+              </div>
+              <div class="section-right">
+                <a href="javascript:;" target="_blank" title=""><img src="article4.png" alt="" /></a>
+              </div>
+            </div>
+            <!-- 文章 end-->
+
+            <div class='link-hd'>
+              热门推荐
+            </div>
+            <ul class='link-list'>
+              <li>
+                <a href="javascript:;" target="_blank" title="">月超200+微信养修预约，这家雪佛兰4S店怎么做到的？</a>
+              </li>
+               <li>
+                <a href="javascript:;" target="_blank" title="">50家4S店线上一天8000单 「818爱车狂欢节」率先开启旺销季</a>
+              </li>
+               <li>
+                <a href="javascript:;" target="_blank" title="">为金九银十打好基础 这份4S店「吸粉」大法怎么能少？</a>
+              </li>
+               <li>
+                <a href="javascript:;" target="_blank" title="">一天完成两月销量 广汽三菱4S店淡季冲量案例全解析</a>
+              </li>
+            </ul>
+            <a href="javascript:;" target="_blank" class='btn-more' title=""><img src="more.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <!-- 期刊内容 end-->
+
+
+
+      <!-- 期刊底部 start-->
+      <div class="article-ft">
+         <img src="code.png" class='code' alt="">
+         <div class='code-name'>
+           关注车商通服务号获取更多汽车4S店营销玩法
+         </div>
+
+         <div class='ft-content'>
+            <span>客服热线：4008-591-730</span>
+            <span>如果您不想继续收到此类邮件，请点击 <a href="javascript:;" target="_blank" title="">这里</a> </span>
+            <span>版权所有©深圳驱动新媒体有限公司</span>
+         </div>
+      </div>
+      <!-- 期刊底部 end-->
+  </div>
+
+</body>
+</html>
